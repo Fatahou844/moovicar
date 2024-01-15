@@ -10,34 +10,232 @@
       content="Web site created using create-react-app"
     />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/headers/">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel='stylesheet'
+      href='https://cdn.jsdelivr.net/gh/StudioKonKon/bootstrap-konkon@1.1.2-beta/dist/css/studio-konkon.min.css'>
+    <link rel='stylesheet'
+      href='https://cdn.jsdelivr.net/npm/material-design-iconic-font@2.2.0/dist/css/material-design-iconic-font.min.css'>
+    <link rel='stylesheet'
+      href='https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&amp;display=swap'>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
+    <link href="%PUBLIC_URL%/assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
+   
+    <title>Moovicar</title>
+        <style>
+          .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+          }
+        
+          @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+              font-size: 3.5rem;
+            }
+          }
+        
+          .fixed-header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            /* Vous pouvez ajuster la valeur en fonction de votre mise en page */
+          }
+        
+          .b-example-divider {
+            width: 100%;
+            height: 3rem;
+            background-color: rgba(0, 0, 0, .1);
+            border: solid rgba(0, 0, 0, .15);
+            border-width: 1px 0;
+            box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+          }
+        
+          .b-example-vr {
+            flex-shrink: 0;
+            width: 1.5rem;
+            height: 100vh;
+          }
+        
+          .bi {
+            vertical-align: -.125em;
+            fill: currentColor;
+          }
+        
+          .nav-scroller {
+            position: relative;
+            z-index: 2;
+            height: 2.75rem;
+            overflow-y: hidden;
+          }
+        
+          .nav-scroller .nav {
+            display: flex;
+            flex-wrap: nowrap;
+            padding-bottom: 1rem;
+            margin-top: -1px;
+            overflow-x: auto;
+            text-align: center;
+            white-space: nowrap;
+            -webkit-overflow-scrolling: touch;
+          }
+        
+          .btn-bd-primary {
+            --bd-violet-bg: #712cf9;
+            --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+        
+            --bs-btn-font-weight: 600;
+            --bs-btn-color: var(--bs-white);
+            --bs-btn-bg: var(--bd-violet-bg);
+            --bs-btn-border-color: var(--bd-violet-bg);
+            --bs-btn-hover-color: var(--bs-white);
+            --bs-btn-hover-bg: #6528e0;
+            --bs-btn-hover-border-color: #6528e0;
+            --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+            --bs-btn-active-color: var(--bs-btn-hover-color);
+            --bs-btn-active-bg: #5a23c8;
+            --bs-btn-active-border-color: #5a23c8;
+          }
+        
+          .bd-mode-toggle {
+            z-index: 1500;
+          }
+        
+          .bd-mode-toggle .dropdown-menu .active .bi {
+            display: block !important;
+          }
+        
+          .custom-popover {
+            --bs-popover-max-width: 200px;
+            --bs-popover-border-color: var(--bd-violet-bg);
+            --bs-popover-header-bg: var(--bd-violet-bg);
+            --bs-popover-header-color: var(--bs-white);
+            --bs-popover-body-padding-x: 1rem;
+            --bs-popover-body-padding-y: .5rem;
+          }
+        
+        
+        
+        
+          section {
+            display: flex;
+            flex-flow: row-wrap;
+          }
+        
+          section>div {
+            flex: 1;
+            padding: 0.5rem;
+          }
+        
+          .radioInputPlace {
+            display: none;
+        
+            &:not(:disabled)~label {
+              cursor: pointer;
+            }
+        
+            &:disabled~label {
+              color: hsla(150, 5%, 75%, 1);
+              border-color: hsla(150, 5%, 75%, 1);
+              box-shadow: none;
+              cursor: not-allowed;
+            }
+          }
+        
+          .checkboxInputPlace {
+            display: none;
+        
+            &:not(:disabled)~label {
+              cursor: pointer;
+            }
+        
+            &:disabled~label {
+              color: hsla(150, 5%, 75%, 1);
+              border-color: hsla(150, 5%, 75%, 1);
+              box-shadow: none;
+              cursor: not-allowed;
+            }
+          }
+        
+          input[type="radio"]:checked+label {
+            background: #29577e;
+            color: hsla(215, 0%, 100%, 1);
+            box-shadow: 0px 0px 20px hsla(150, 6%, 93%, 0.75);
+        
+          }
+        
+          input[type="checkbox"]:checked+label {
+            background: #29577e;
+            color: hsla(215, 0%, 100%, 1);
+            box-shadow: 0px 0px 20px hsla(150, 6%, 93%, 0.75);
+        
+          }
+        
+        
+          .labelPlace {
+            display: block;
+            background: white;
+            border: 2px solid #5bb780;
+            border-radius: 25px;
+            padding: 0.7rem;
+            margin-bottom: 1rem;
+            width: 120px;
+            height: 60px;
+            text-align: center;
+            box-shadow: 0px 3px 10px -2px hsla(150, 5%, 65%, 0.5);
+            position: relative;
+          }
+        
+          .labelPlaceCheckBox {
+            display: block;
+            background: white;
+            border: 2px solid #5bb780;
+            border-radius: 25px;
+            padding: 0.7rem;
+            margin-bottom: 1rem;
+            width: 100%;
+            height: 60px;
+            text-align: center;
+            box-shadow: 0px 3px 10px -2px hsla(150, 5%, 65%, 0.5);
+            position: relative;
+          }
+        
+          /* Media query pour les écrans dont la largeur est inférieure à 768 pixels (ex. smartphones) */
+          @media (max-width: 768px) {
+            section {
+              flex-direction: column;
+            }
+        
+            .labelPlace {
+              width: 95px;
+              /* Ajustez la largeur selon vos besoins */
+              height: 50px;
+              /* Ajustez la hauteur selon vos besoins */
+              font-size: 14px;
+              /* Ajustez la taille de la police selon vos besoins */
+            }
+        
+            .labelPlaceCheckBox {
+        
+              height: 100px;
+        
+            }
+          }
+        </style>
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+    <script src="%PUBLIC_URL%/assets/dist/js/bootstrap.bundle.min.js"></script>
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
+
   </body>
 </html>
