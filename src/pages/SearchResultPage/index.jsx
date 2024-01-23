@@ -78,26 +78,26 @@ function SearchResultPage() {
             </div>
           </div>
         </div>
-
-        <div className="col-md-5 mb-3">
-          <h2>
-            <span>
-              <strong>Plus de 200 voitures disponibles</strong>
-            </span>
-          </h2>
-          <small className="mb-3 text-muted">
-            Ces voitures peuvent être récupérées dans cette ville.
-          </small>
-          <AnnonceItem propsData={data}></AnnonceItem>
-          <AnnonceItem propsData={data}></AnnonceItem>
-          <AnnonceItem propsData={data}></AnnonceItem>
-          <AnnonceItem propsData={data}></AnnonceItem>
-        </div>
-        <div className="col-md-7 mb-3">
-          <MapItem centers={centers}></MapItem>
+        <div className="row">
+          <div className="col-md-5 mb-3">
+            <h2>
+              <span>
+                <strong>Plus de 200 voitures disponibles</strong>
+              </span>
+            </h2>
+            <small className="mb-3 text-muted">
+              Ces voitures peuvent être récupérées dans cette ville.
+            </small>
+            <AnnonceItem propsData={data}></AnnonceItem>
+            <AnnonceItem propsData={data}></AnnonceItem>
+            <AnnonceItem propsData={data}></AnnonceItem>
+            <AnnonceItem propsData={data}></AnnonceItem>
+          </div>
+          <div className="col-md-7 mb-3" style={{ height: "100%" }}>
+            <MapItem centers={centers}></MapItem>
+          </div>
         </div>
       </div>
-      );
     </>
   );
 }
