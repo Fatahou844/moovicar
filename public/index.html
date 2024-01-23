@@ -24,6 +24,13 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <link href="%PUBLIC_URL%/assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/your-path-to-uicons/css/uicons-rounded-regular.css" rel="stylesheet">
+    <link href="/your-path-to-uicons/css/uicons-rounded-bold.css" rel="stylesheet">
+    <link href="/your-path-to-uicons/css/uicons-rounded-solid.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+
 
    
     <title>Moovicar</title>
@@ -35,7 +42,68 @@
             -moz-user-select: none;
             user-select: none;
           }
-        
+          .checked {
+            color: #5bb780;
+          }
+          .profil-main .reviews-filter select {
+  height: auto;
+  width: 50%;
+}
+/* App.css */
+.app {
+  text-align: center;
+  margin: 20px;
+}
+
+.filter-bars {
+  display: flex;
+  justify-content: space-between;
+}
+
+.filter-bar {
+  width: 100px;
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+.bar {
+  background-color: #3498db;
+  height: 20px;
+}
+
+.label {
+  margin-top: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+}
+
+.profil-main .reviews-filter .filters {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+.profil-main .reviews-filter .filters label {
+  grid-template-columns: 20px 100px 33px auto;
+  gap: 10px;
+  margin-bottom: 20px;
+  transition: all 200ms;
+}
+.profil-main .reviews-filter .filters label .progress {
+  width: 100%;
+  height: auto;
+}
+.profil-main .reviews-filter .filters label .progress .progress-bar {
+  transition: all 200ms;
+  height: 26px;
+  --bs-progress-bar-bg: gray;
+}
+.profil-main .reviews-filter .filters label * {
+  vertical-align: middle;
+  display: flex;
+  justify-content: flex-start;
+}
+                  
           @media (min-width: 768px) {
             .bd-placeholder-img-lg {
               font-size: 3.5rem;
@@ -207,7 +275,47 @@
             box-shadow: 0px 3px 10px -2px hsla(150, 5%, 65%, 0.5);
             position: relative;
           }
-        
+.circle-container {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: #eee;
+  overflow: hidden;
+}
+
+.circle-fill {
+  position: absolute;
+  width: 50%; /* Ajustez la largeur pour définir le pourcentage rempli de la jauge */
+  height: 100%;
+  clip: rect(0, 100px, 200px, 0);
+  border-radius: 50%;
+  border: 100px solid #3498db; /* Couleur de la jauge non pleine */
+  border-top: 100px solid transparent; /* Permet de créer un arc circulaire */
+  transform-origin: 100%;
+}
+
+.circle-text {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+  font-size: 24px;
+  font-weight: bold;
+}
+.badge-container {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 5px;
+}
+
+.custom-marker {
+  width: auto !important;
+  height: auto !important;
+}
           /* Media query pour les écrans dont la largeur est inférieure à 768 pixels (ex. smartphones) */
           @media (max-width: 768px) {
             section {
@@ -232,9 +340,14 @@
         </style>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <div id="map"></div>
+    </div>
+    
 
     <script src="%PUBLIC_URL%/assets/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 
 
   </body>

@@ -29,6 +29,7 @@ function VoitureAnnonce({ propsData }) {
               alt="Annonce voiture"
               height="100"
               width="100"
+              style={{ borderRadius: "0.3rem" }}
             />
           </div>
         </div>

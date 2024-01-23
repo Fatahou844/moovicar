@@ -1,0 +1,301 @@
+GET : /api/car_models/models?make=83
+
+GET: /api/car_models/estimated_earnings
+
+        params: car_model_estimation[car_brand_id]
+            28
+        car_model_estimation[car_model_id]
+            2752
+        car_model_estimation[release_year]
+            2020
+        car_model_estimation[mileage]
+            4
+        car_model_estimation[city]
+            
+        car_model_estimation[city_country]
+            FR
+        car_model_estimation[subdivision]
+            
+        car_model_estimation[latitude]
+            48.72898597901601
+        car_model_estimation[longitude]
+            2.2704402550732654
+        car_model_estimation[registration_country]
+            FR
+        car_model_estimation[with_open_landing_multiplier]
+            true
+
+GET: /api/autocomplete/cities
+    delivery_points_of_interest_only
+	false
+    enable_google_places
+        true
+    enable_imprecise_addresses
+        true
+    input
+        paris
+
+
+GET: /api/internal/user_menu
+params:  current_path
+	/car_wizards/1395308/steps/model
+
+
+    Response:   
+       {
+	"user_infos": {
+		"id": 5615810,
+		"first_name": "Fatahou",
+		"last_name": "Ahamadi",
+		"avatar_src": "https://drivy.gumlet.io/uploads/originals/71e0f8c459a56b1003c2d965048ad7d7.png?compress=true&crop=faces&dpr=1&fm=png&h=100&mask=ellipse&mode=crop&w=100",
+		"is_owner": true
+	},
+	"links": [
+		{
+			"identifier": "account",
+			"name": "Modifier mon compte",
+			"url": "/dashboard/profile/edit",
+			"badge": null,
+			"mobile_only": null,
+			"icon_name": null,
+			"special": null,
+			"access": "driver",
+			"method": null
+		},
+		{
+			"identifier": "profile_verification",
+			"name": "Vérifier mon profil",
+			"url": "/dashboard/profile_verification_status",
+			"badge": null,
+			"mobile_only": null,
+			"icon_name": null,
+			"special": null,
+			"access": "driver",
+			"method": null
+		},
+		{
+			"identifier": "rentals",
+			"name": "Locations",
+			"url": "/dashboard/rentals?user_behavior=driver",
+			"badge": false,
+			"mobile_only": null,
+			"icon_name": null,
+			"special": null,
+			"access": "driver",
+			"method": null
+		},
+		{
+			"identifier": "payments",
+			"name": "Paiements",
+			"url": "/dashboard/payments?role=driver",
+			"badge": null,
+			"mobile_only": null,
+			"icon_name": null,
+			"special": null,
+			"access": "driver",
+			"method": null
+		},
+		{
+			"identifier": "referral",
+			"name": "Gagnez 15€ de crédit",
+			"url": "/dashboard/referral",
+			"badge": null,
+			"mobile_only": null,
+			"icon_name": "miscGift",
+			"special": true,
+			"access": "driver",
+			"method": null
+		},
+		{
+			"identifier": "help_center",
+			"name": "Des questions ?",
+			"url": "/help",
+			"badge": null,
+			"mobile_only": true,
+			"icon_name": "contextualQuestion",
+			"special": true,
+			"access": "driver",
+			"method": null
+		},
+		{
+			"identifier": "owner_landing_page",
+			"name": "Louer ma voiture",
+			"url": "/louer-sa-voiture",
+			"badge": null,
+			"mobile_only": true,
+			"icon_name": "car",
+			"special": true,
+			"access": "driver",
+			"method": null
+		},
+		{
+			"identifier": "logout",
+			"name": "Se déconnecter",
+			"url": "/logout",
+			"badge": null,
+			"mobile_only": null,
+			"icon_name": "logout",
+			"special": true,
+			"access": "driver",
+			"method": "delete"
+		},
+		{
+			"identifier": "account",
+			"name": "Modifier mon compte",
+			"url": "/dashboard/profile/edit",
+			"badge": null,
+			"mobile_only": null,
+			"icon_name": null,
+			"special": null,
+			"access": "owner",
+			"method": null
+		},
+		{
+			"identifier": "matches",
+			"name": "Demandes",
+			"url": "/dashboard/matches",
+			"badge": false,
+			"mobile_only": null,
+			"icon_name": null,
+			"special": null,
+			"access": "owner",
+			"method": null
+		},
+		{
+			"identifier": "rentals",
+			"name": "Locations",
+			"url": "/dashboard/rentals?user_behavior=owner",
+			"badge": false,
+			"mobile_only": null,
+			"icon_name": null,
+			"special": null,
+			"access": "owner",
+			"method": null
+		},
+		{
+			"identifier": "cars",
+			"name": "Voitures",
+			"url": "/dashboard/cars",
+			"badge": null,
+			"mobile_only": null,
+			"icon_name": null,
+			"special": null,
+			"access": "owner",
+			"method": null
+		},
+		{
+			"identifier": "performance",
+			"name": "Performance",
+			"url": "/dashboard/performance",
+			"badge": null,
+			"mobile_only": null,
+			"icon_name": null,
+			"special": null,
+			"access": "owner",
+			"method": null
+		},
+		{
+			"identifier": "payments",
+			"name": "Paiements",
+			"url": "/dashboard/payments?role=owner",
+			"badge": null,
+			"mobile_only": null,
+			"icon_name": null,
+			"special": null,
+			"access": "owner",
+			"method": null
+		},
+		{
+			"identifier": "help_center",
+			"name": "Des questions ?",
+			"url": "/help",
+			"badge": null,
+			"mobile_only": true,
+			"icon_name": "contextualQuestion",
+			"special": true,
+			"access": "owner",
+			"method": null
+		},
+		{
+			"identifier": "owner_landing_page",
+			"name": "Louer ma voiture",
+			"url": "/louer-sa-voiture",
+			"badge": null,
+			"mobile_only": true,
+			"icon_name": "car",
+			"special": true,
+			"access": "owner",
+			"method": null
+		},
+		{
+			"identifier": "logout",
+			"name": "Se déconnecter",
+			"url": "/logout",
+			"badge": null,
+			"mobile_only": null,
+			"icon_name": "logout",
+			"special": true,
+			"access": "owner",
+			"method": "delete"
+		}
+	]
+}
+
+#### Marque => liste des modèles 
+
+GET: https://maps.googleapis.com/maps/api/mapsjs/gen_204?csp_test=true
+
+PUT: api/cars/1395308/car_photos/order
+POST: api/cars/1395308/car_photo
+
+ body: file_url, photo_height, photo_width
+
+
+
+
+ ############################################
+ Engeristrer les marques (Id, Nom)
+ Engeristrer les Modèle (Id, Nom)
+
+
+ GET: https://fr.getaround.com/search.json
+ params:   address
+	Gare de Paris Est
+address_source
+	poi
+administrative_area
+	undefined
+city_display_name
+	undefined
+country_scope
+	FR
+display_view
+	list
+end_date
+	2024-02-10
+end_time
+	08:00
+latitude
+	48.877
+longitude
+	2.3591
+picked_car_ids
+	EMPTY
+pickup_method
+	
+poi_id
+	980
+program
+	getaround
+start_date
+	2024-01-22
+start_time
+	08:30
+view_mode
+	list
+
+
+	cars : 
+
+
+GET: https://turo.com/api/v2/reservation/conversation?reservationId=28589659

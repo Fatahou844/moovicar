@@ -1,4 +1,17 @@
+import { useState } from "react";
+import SelectedModelCarsInput from "../../components/SelectedModelCarsInput";
 function VoitureConfigPage() {
+  const [selectedModel, setSelectedModel] = useState(null);
+  const [selectedMarque, setSelectedMarque] = useState(null);
+
+  // Fonctions de rappel pour récupérer les valeurs sélectionnées
+  const handleModelChange = (selectedModel) => {
+    setSelectedModel(selectedModel);
+  };
+
+  const handleMarqueChange = (selectedMarque) => {
+    setSelectedMarque(selectedMarque);
+  };
   function handleConfirm() {
     window.location.href = "/advancedconfig";
   }
@@ -25,31 +38,11 @@ function VoitureConfigPage() {
             </p>
             <h4>Confirmez le modèle de votre voiture</h4>
             <hr />
-            <label class="mb-2" for="Marque">
-              Marque
-            </label>
-            <select
-              class="form-select form-select-lg mb-3"
-              aria-label="Large select example"
-            >
-              <option selected>Open this select menu</option>
-              <option value="1">One</option>
-              <option value="2">Two</option>
-              <option value="3">Three</option>
-            </select>
-            <label class="mb-2" for="Modele">
-              Modèle
-            </label>
-            <select
-              class="form-select form-select-lg mb-3"
-              aria-label="Large select example"
-            >
-              <option selected>Open this select menu</option>
-              <option value="1">One</option>
-              <option value="2">Two</option>
-              <option value="3">Three</option>
-            </select>
 
+            <SelectedModelCarsInput
+              onModelChange={handleModelChange}
+              onMarqueChange={handleMarqueChange}
+            ></SelectedModelCarsInput>
             <div class="alert alert-warning mb-3" role="alert">
               Dans quelques minutes, votre annonce sera mise en ligne ⏱️
             </div>

@@ -67,14 +67,12 @@ function Nav() {
 
       <li class="nav-item" role="presentation">
         <Link
-          class="nav-link"
-          // id="pills-performances-tab"
-          // data-bs-toggle="pill"
-          // data-bs-target="#pills-performances"
-          // type="button"
-          // role="tab"
-          // aria-controls="pills-performances"
-          // aria-selected="false"
+          class={
+            location.pathname.includes("performances")
+              ? "nav-link active"
+              : "nav-link"
+          }
+          to={"/account/performances"}
         >
           performances
         </Link>

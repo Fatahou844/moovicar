@@ -1,6 +1,8 @@
+import AnnonceItem from "../../components/AnnonceItem";
 import Nav from "../../components/Nav";
 import VoitureAnnonce from "../../components/VoitureAnnonce";
 function AccountVoitures() {
+  const data = { car_id: "7888999" };
   return (
     <section className="mb-3">
       <div className="container">
@@ -68,6 +70,9 @@ function AccountVoitures() {
           <VoitureAnnonce></VoitureAnnonce>
           <VoitureAnnonce></VoitureAnnonce>
           <VoitureAnnonce></VoitureAnnonce>
+          <AnnonceItem propsData={data}></AnnonceItem>
+          <AnnonceItem propsData={data}></AnnonceItem>
+          <AnnonceItem propsData={data}></AnnonceItem>
         </div>
       </div>
     </section>
