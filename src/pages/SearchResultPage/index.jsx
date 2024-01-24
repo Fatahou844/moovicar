@@ -89,29 +89,6 @@ function SearchResultPage() {
           </section>
           <section>
             <div className="row">
-              <div className="col-md-6 mb-3">
-                <h2>
-                  <span>
-                    <strong>Plus de 200 voitures disponibles</strong>
-                  </span>
-                </h2>
-                <small className="mb-3 text-muted">
-                  Ces voitures peuvent être récupérées dans cette ville.
-                </small>
-                <AnnonceItem propsData={data}></AnnonceItem>
-                <AnnonceItem propsData={data}></AnnonceItem>
-                <AnnonceItem propsData={data}></AnnonceItem>
-                <AnnonceItem propsData={data}></AnnonceItem>
-              </div>
-              <div
-                className={`col-md-6 p-0 mb-3 colmd6map ${
-                  showMap ? "show-map" : ""
-                }`}
-              >
-                <h2>Véhicule mapping</h2>
-                <MapItem centers={centers}></MapItem>
-              </div>
-
               <button
                 className="btn btn-tertiary d-block d-md-none"
                 data-bs-toggle="offcanvas"
@@ -138,9 +115,31 @@ function SearchResultPage() {
                     aria-label="Close"
                   ></button>
                 </div>
-                <div class="offcanvas-body">
+                <div class="offcanvas-body p-0">
                   <MapItem centers={centers}></MapItem>
                 </div>
+              </div>
+              <div className="col-md-6 mb-3">
+                <h2>
+                  <span>
+                    <strong>Plus de 200 voitures disponibles</strong>
+                  </span>
+                </h2>
+                <small className="mb-3 text-muted">
+                  Ces voitures peuvent être récupérées dans cette ville.
+                </small>
+                <AnnonceItem propsData={data}></AnnonceItem>
+                <AnnonceItem propsData={data}></AnnonceItem>
+                <AnnonceItem propsData={data}></AnnonceItem>
+                <AnnonceItem propsData={data}></AnnonceItem>
+              </div>
+              <div
+                className={`col-md-6 p-0 mb-3 colmd6map ${
+                  showMap ? "show-map" : ""
+                }`}
+              >
+                <h2>Véhicule mapping</h2>
+                <MapItem centers={centers}></MapItem>
               </div>
             </div>
           </section>
