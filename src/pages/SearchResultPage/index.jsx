@@ -114,34 +114,32 @@ function SearchResultPage() {
 
               <button
                 className="btn btn-tertiary d-block d-md-none"
-                data-bs-toggle="modal"
-                data-bs-target="#exampleModal"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#staticBackdrop"
+                aria-controls="staticBackdrop"
               >
                 Afficher la carte
               </button>
               <div
-                class="modal fade"
-                id="exampleModal"
+                class="offcanvas offcanvas-start"
+                data-bs-backdrop="static"
                 tabindex="-1"
-                aria-labelledby="exampleModalLabel"
-                aria-hidden="true"
+                id="staticBackdrop"
+                aria-labelledby="staticBackdropLabel"
               >
-                <div class="modal-dialog">
-                  <div class="modal-content">
-                    <div class="modal-body">
-                      <h2>Véhicule mapping</h2>
-                      <MapItem centers={centers}></MapItem>
-                    </div>
-                    <div class="modal-footer">
-                      <button
-                        type="button"
-                        class="btn btn-secondary"
-                        data-bs-dismiss="modal"
-                      >
-                        Fermer
-                      </button>
-                    </div>
-                  </div>
+                <div class="offcanvas-header">
+                  <h5 class="offcanvas-title" id="staticBackdropLabel">
+                    Véhicule mapping
+                  </h5>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="offcanvas"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="offcanvas-body">
+                  <MapItem centers={centers}></MapItem>
                 </div>
               </div>
             </div>
