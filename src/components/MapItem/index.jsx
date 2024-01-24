@@ -29,8 +29,8 @@ const MapItem = ({ centers }) => {
         center={centers[0].coordinates}
         zoom={zoom}
         style={{
-          height: location.pathname.includes("search") ? "100%" : "500px",
-          width: "100%",
+          height: location.pathname.includes("search") ? "100vh" : "500px",
+          width: location.pathname.includes("search") ? "100%" : "100%",
         }}
       >
         <TileLayer

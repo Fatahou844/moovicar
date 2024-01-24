@@ -28,3 +28,158 @@
       font-size: 24px;
       font-weight: bold;
   }
+
+  .rooms-section {
+      padding-top: 0;
+      padding-bottom: 80px;
+  }
+
+  .room-item {
+      margin-bottom: 30px;
+  }
+
+  .room-item img {
+      min-width: 100%;
+  }
+
+  .room-item .ri-text {
+      padding: 0;
+  }
+
+  .room-item .ri-text h4 {
+      color: #19191a;
+      margin-bottom: 17px;
+  }
+
+  .room-item.gites {
+      position: relative;
+  }
+
+  .room-item.gites .image {
+      border-radius: 15px;
+      overflow: hidden;
+  }
+
+  .room-item.gites img {
+      transition: all 400ms ease;
+      transform: scale(1);
+  }
+
+  .room-item.gites:hover img {
+      transform: scale(1.1);
+  }
+
+  .room-item.gites a::after {
+      position: absolute;
+      content: "";
+      inset: 0;
+  }
+
+  .room-item .ri-text h3 {
+      color: #dccb92;
+      font-weight: 700;
+      margin-bottom: 14px;
+  }
+
+  .room-item .ri-text h3 span {
+      font-family: "Cabin", sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      color: #19191a;
+  }
+
+  .room-item .ri-text table {
+      margin-bottom: 18px;
+  }
+
+  .room-item .ri-text table tbody tr td {
+      font-size: 16px;
+      color: #707079;
+      line-height: 36px;
+  }
+
+  .room-item .ri-text table tbody tr td.r-o {
+      width: 125px;
+  }
+
+  .room-item .ri-text .primary-btn {
+      color: #19191a;
+  }
+
+  .room-pagination {
+      text-align: center;
+      padding-top: 20px;
+  }
+
+  .room-pagination a {
+      font-size: 16px;
+      color: #707079;
+      border: 1px solid #EFD4B9;
+      border-radius: 2px;
+      padding: 7px 13px 5px;
+      margin-right: 7px;
+      display: inline-block;
+      transition: all 0.3s;
+  }
+
+  .room-pagination a:last-child {
+      margin-right: 0;
+  }
+
+  .room-pagination a:hover {
+      background: #dccb92;
+      color: #ffffff;
+  }
+
+  .map-gite,
+  #map {
+      height: 100vh;
+  }
+
+  .hero-section .map-gite,
+  .hero-section #map {
+      height: 500px;
+  }
+
+  @media only screen and (min-width:900px) {
+      .rooms-section .container-fluid {
+          display: grid;
+          grid-template-columns: 7fr 7fr;
+      }
+
+      .rooms-section .container-fluid .rooms {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          grid-column-gap: 30px;
+          padding: 0 30px;
+      }
+
+      .map-gite {
+          background-color: #999;
+          position: -webkit-sticky;
+          position: sticky;
+          top: 0;
+          left: 0;
+          right: 0;
+      }
+
+      
+  }
+
+  .show-map {
+      display: block !important;
+  }
+
+  .colmd6map {
+      display: block !important;
+  }
+
+  @media only screen and (max-width: 767px) {
+      .colmd6map {
+          display: none !important;
+      }
+
+      .show-map {
+          display: block !important;
+      }
+  }

@@ -623,7 +623,6 @@ function VoitureProfilePage() {
         </div>
       </section>
       <MapItem centers={centers}></MapItem>
-      );
     </>
   );
 }
