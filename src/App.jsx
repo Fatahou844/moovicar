@@ -2,6 +2,7 @@ import hero from "../src/assets/hero_FR.avif";
 import BodySection1 from "./components/BodySection1";
 import HeaderSection2 from "./components/HeaderSection2";
 import HeaderSection3 from "./components/HeaderSection3";
+import LocationSearchInput from "./components/LocationSearchInput";
 function App() {
   return (
     <>
@@ -20,16 +21,10 @@ function App() {
               </h3>
               <div class="mb-3">
                 <div class="form-floating mb-3">
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="floatingInput"
-                    placeholder="10 arrondissement"
-                  />
-                  <label for="floatingInput">Adresse</label>
+                  <LocationSearchInput></LocationSearchInput>
                 </div>
 
-                <div class="row g-2">
+                <div class="row g-2 mb-3">
                   <div class="col-md">
                     <div class="form-floating">
                       <input
@@ -53,6 +48,7 @@ function App() {
                     </div>
                   </div>
                 </div>
+                <button className="btn btn-tertiary w-100">Rechercher</button>
               </div>
               <p>
                 Location de voiture entre particuliers et pros assurée par axa

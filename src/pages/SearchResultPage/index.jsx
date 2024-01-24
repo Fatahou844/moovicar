@@ -1,3 +1,4 @@
+import { SearchBox } from "@mapbox/search-js-react";
 import { useState } from "react";
 import AnnonceItem from "../../components/AnnonceItem";
 import MapItem from "../../components/MapItem";
@@ -32,12 +33,11 @@ function SearchResultPage() {
           <section>
             <div className="row">
               <div className="col-md-3 mb-2">
-                <input
+                <SearchBox
+                  accessToken="sk.eyJ1IjoiYWhhbWFkaSIsImEiOiJjbHJzMmx0YWUwMDlwMmpxYXRyM28xeWFyIn0.UupgE6XpRbsTc7PFY4f99g"
                   class="form-control"
-                  type="search"
-                  placeholder="Recherche"
-                  aria-label="Recherche"
-                ></input>
+                  placeholder="Pharmacie Gare Paris Est, Hall Gare de l’est, Rue du 8 Mai 1945, Paris, France"
+                />
               </div>
               <div className="col">
                 <div class="d-flex justify-content-start">
