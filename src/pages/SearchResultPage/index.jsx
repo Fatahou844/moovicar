@@ -33,16 +33,34 @@ function SearchResultPage() {
   };
 
   const location = useLocation();
+  const searchParams = new URLSearchParams(location.search);
+
+  // Récupérer la latitude et la longitude depuis les paramètres de requête
+  const latitude = searchParams.get("latitude");
+  const longitude = searchParams.get("longitude");
 
   const [coordinates, setCoordinates] = useState([
     {
       id: 1,
       name: "Renault Clio",
-      coordinates: [45.665672, 9.699062],
+      coordinates: [longitude, latitude],
       price: 230,
     },
-    { id: 2, name: "Tesla", coordinates: [45.695672, 9.679062], price: 340 },
-    { id: 3, name: "Ford", coordinates: [45.705672, 9.649062], price: 200 },
+    {
+      id: 2,
+      name: "Tesla",
+      coordinates: [
+        parseFloat(longitude) + 0.0001,
+        parseFloat(latitude) - 0.0003,
+      ],
+      price: 340,
+    },
+    {
+      id: 3,
+      name: "Ford",
+      coordinates: [parseFloat(longitude) + 0.00006, parseFloat(latitude)],
+      price: 200,
+    },
   ]);
 
   useEffect(() => {
@@ -59,8 +77,24 @@ function SearchResultPage() {
         coordinates: [longitude, latitude],
         price: 230,
       },
-      { id: 2, name: "Tesla", coordinates: [longitude, latitude], price: 340 },
-      { id: 3, name: "Ford", coordinates: [longitude, latitude], price: 200 },
+      {
+        id: 2,
+        name: "Tesla",
+        coordinates: [
+          parseFloat(longitude) + 0.001,
+          parseFloat(latitude) - 0.003,
+        ],
+        price: 340,
+      },
+      {
+        id: 3,
+        name: "Ford",
+        coordinates: [
+          parseFloat(longitude) + 0.002,
+          parseFloat(latitude) - 0.001,
+        ],
+        price: 200,
+      },
     ]);
 
     console.log(latitude);

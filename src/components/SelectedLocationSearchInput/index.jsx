@@ -83,7 +83,11 @@ function SelectedLocationSearchInput({ handleSelectLocation, resetInput }) {
             }}
           />
           {searchTerm.length >= 2 && (
-            <ul className={show ? "dropdown-menu show" : "dropdown-menu"}>
+            <ul
+              className={
+                show ? "dropdown-menu w-100 show" : "dropdown-menu w-100"
+              }
+            >
               {searchResults.map((suggestion, index) => (
                 <li key={index}>
                   <button
@@ -91,10 +95,10 @@ function SelectedLocationSearchInput({ handleSelectLocation, resetInput }) {
                     type="button"
                     onClick={() => handleSelectLocationInput(suggestion)}
                   >
-                    <span>
+                    <p className="w-100 " style={{ wordWrap: "break-word" }}>
                       <ion-icon name="location-outline"></ion-icon>{" "}
                       {suggestion.place_name}
-                    </span>
+                    </p>
                   </button>
                 </li>
               ))}
