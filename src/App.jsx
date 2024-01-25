@@ -1,9 +1,32 @@
+import { useState } from "react";
 import hero from "../src/assets/hero_FR.avif";
 import BodySection1 from "./components/BodySection1";
 import HeaderSection2 from "./components/HeaderSection2";
 import HeaderSection3 from "./components/HeaderSection3";
-import LocationSearchInput from "./components/LocationSearchInput";
+import SelectedLocationSearchInput from "./components/SelectedLocationSearchInput";
+
 function App() {
+  const [locationCenter, setLocationCenter] = useState([0, 0]);
+  const [locationPlcaeName, setLocationPaceNmae] = useState("");
+  const [resetInput, setResetInput] = useState(true);
+
+  const handleLocationSelection = (locationAddress) => {
+    setLocationCenter(locationAddress.center);
+    setLocationPaceNmae(locationAddress.place_name);
+  };
+
+  const handleSearch = () => {
+    window.location.href =
+      "/search?address=" +
+      locationPlcaeName +
+      "&center=" +
+      locationCenter +
+      "&address_source=mapbox&latitude=" +
+      locationCenter[0] +
+      "&longitude=" +
+      locationCenter[1];
+  };
+
   return (
     <>
       <section class="mb-3">
@@ -21,7 +44,10 @@ function App() {
               </h3>
               <div class="mb-3">
                 <div class="form-floating mb-3">
-                  <LocationSearchInput></LocationSearchInput>
+                  <SelectedLocationSearchInput
+                    handleSelectLocation={handleLocationSelection}
+                    resetInput={resetInput}
+                  ></SelectedLocationSearchInput>
                 </div>
 
                 <div class="row g-2 mb-3">
@@ -48,7 +74,12 @@ function App() {
                     </div>
                   </div>
                 </div>
-                <button className="btn btn-tertiary w-100">Rechercher</button>
+                <button
+                  className="btn btn-tertiary w-100"
+                  onClick={handleSearch}
+                >
+                  Rechercher
+                </button>
               </div>
               <p>
                 Location de voiture entre particuliers et pros assurée par axa

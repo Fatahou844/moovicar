@@ -1,7 +1,8 @@
-import { SearchBox } from "@mapbox/search-js-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 import AnnonceItem from "../../components/AnnonceItem";
 import MapItem from "../../components/MapItem";
+import SelectedLocationSearchInput from "../../components/SelectedLocationSearchInput";
 import "../../styles/style.css";
 function SearchResultPage() {
   const [moreDiplay, setMoreDisplay] = useState(false);
@@ -15,16 +16,56 @@ function SearchResultPage() {
   }
 
   const data = { car_id: "7888999" };
-  const centers = [
-    { id: 1, name: "Renault Clio", coordinates: [51.505, -0.09], price: 230 },
-    { id: 2, name: "Tesla", coordinates: [51.503, -0.08], price: 340 },
-    { id: 3, name: "Ford", coordinates: [51.5, -0.07], price: 200 },
-  ];
+
   const [showMap, setShowMap] = useState(false);
 
   const toggleMap = () => {
     setShowMap(!showMap);
   };
+
+  const [locationCenter, setLocationCenter] = useState([0, 0]);
+  const [locationPlcaeName, setLocationPaceNmae] = useState("");
+  const [resetInput, setResetInput] = useState(true);
+
+  const handleLocationSelection = (locationAddress) => {
+    setLocationCenter(locationAddress.center);
+    setLocationPaceNmae(locationAddress.place_name);
+  };
+
+  const location = useLocation();
+
+  const [coordinates, setCoordinates] = useState([
+    {
+      id: 1,
+      name: "Renault Clio",
+      coordinates: [45.665672, 9.699062],
+      price: 230,
+    },
+    { id: 2, name: "Tesla", coordinates: [45.695672, 9.679062], price: 340 },
+    { id: 3, name: "Ford", coordinates: [45.705672, 9.649062], price: 200 },
+  ]);
+
+  useEffect(() => {
+    const searchParams = new URLSearchParams(location.search);
+
+    // Récupérer la latitude et la longitude depuis les paramètres de requête
+    const latitude = searchParams.get("latitude");
+    const longitude = searchParams.get("longitude");
+
+    setCoordinates([
+      {
+        id: 1,
+        name: "Renault Clio",
+        coordinates: [longitude, latitude],
+        price: 230,
+      },
+      { id: 2, name: "Tesla", coordinates: [longitude, latitude], price: 340 },
+      { id: 3, name: "Ford", coordinates: [longitude, latitude], price: 200 },
+    ]);
+
+    console.log(latitude);
+    console.log(longitude);
+  }, [location.search]);
 
   return (
     <>
@@ -33,11 +74,10 @@ function SearchResultPage() {
           <section>
             <div className="row">
               <div className="col-md-3 mb-2">
-                <SearchBox
-                  accessToken="sk.eyJ1IjoiYWhhbWFkaSIsImEiOiJjbHJzMmx0YWUwMDlwMmpxYXRyM28xeWFyIn0.UupgE6XpRbsTc7PFY4f99g"
-                  class="form-control"
-                  placeholder="Pharmacie Gare Paris Est, Hall Gare de l’est, Rue du 8 Mai 1945, Paris, France"
-                />
+                <SelectedLocationSearchInput
+                  handleSelectLocation={handleLocationSelection}
+                  resetInput={resetInput}
+                ></SelectedLocationSearchInput>
               </div>
               <div className="col">
                 <div class="d-flex justify-content-start">
@@ -116,7 +156,7 @@ function SearchResultPage() {
                   ></button>
                 </div>
                 <div class="offcanvas-body p-0">
-                  <MapItem centers={centers}></MapItem>
+                  <MapItem centers={coordinates}></MapItem>
                 </div>
               </div>
               <div className="col-md-6 mb-3">
@@ -139,7 +179,7 @@ function SearchResultPage() {
                 }`}
               >
                 <h2>Véhicule mapping</h2>
-                <MapItem centers={centers}></MapItem>
+                <MapItem centers={coordinates}></MapItem>
               </div>
             </div>
           </section>

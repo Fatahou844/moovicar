@@ -1,6 +1,6 @@
 import L from "leaflet";
 import "leaflet/dist/leaflet.css"; // Importez les styles Leaflet
-import React from "react";
+import React, { useEffect } from "react";
 import {
   Circle,
   LayerGroup,
@@ -22,6 +22,13 @@ const MapItem = ({ centers }) => {
     popupAnchor: [0, -32], // Point d'ancrage du popup
   });
   const location = useLocation();
+
+  useEffect(() => {
+    // Vous pouvez éventuellement ajouter des opérations à effectuer
+    // lorsqu'il y a des changements dans les données (centers).
+    // Cela pourrait inclure des opérations de mise à jour du state,
+    // des appels à des API, etc.
+  }, [centers]);
 
   return (
     <>
@@ -48,7 +55,8 @@ const MapItem = ({ centers }) => {
               icon={
                 new L.DivIcon({
                   className: "custom-marker",
-                  html: `<div class="badge-container"><span class="badge bg-tertiary" style="font-size: 16px;"><ion-icon name="car-sport-outline"></ion-icon> ${center.price}€</span></div>`,
+                  html: `<div class="badge-container"><span class="badge bg-tertiary" style="font-size: 16px;"><ion-icon name="car-sport-outline"></ion-icon> ${center.price}€</span>
+                  </div>`,
                 })
               }
             >
@@ -65,7 +73,7 @@ const MapItem = ({ centers }) => {
           {/* Ajoutez le Circle avec une couleur personnalisée */}
           <Circle
             center={centers[0].coordinates}
-            radius={100}
+            radius={400}
             fillColor="blue"
             fillOpacity={0.2}
           />
